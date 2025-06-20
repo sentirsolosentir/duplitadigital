@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -14,8 +13,13 @@ app.post("/webhook", (req, res) => {
     case "Default Welcome Intent":
       responseText = "Hola, soy Duplita Digital. ¿Qué deseas saber?";
       break;
+
+    case "Duplita":
+      responseText = "Fui creada por Stephany, una publicista y psicóloga brillante. Estoy aquí para ayudarte 💫";
+      break;
+
     default:
-      responseText = "¡Duplita aún está aprendiendo eso!";
+      responseText = "¡Duplita aún está aprendiendo eso! ¿Quieres preguntarme otra cosa?";
   }
 
   res.json({
